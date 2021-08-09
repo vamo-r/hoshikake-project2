@@ -14,12 +14,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hoshikake-project2',
+    title: '星駆花火大会 | 星駆web制作企画',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: '技術向上及び交流を目的としたweb制作企画の1つのサイトです。' },
+      { name: 'format-detection', content: 'telephone=no' },
+
+      { hid: 'og:site_name', property: 'og:site_name', content: '星駆花火大会 | 星駆web制作企画' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'サイトURL' },
+      { hid: 'og:title', property: 'og:title', content: '星駆花火大会' },
+      { hid: 'og:description', property: 'og:description', content: '技術向上及び交流を目的としたweb制作企画の1つのサイトです。' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
