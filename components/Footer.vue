@@ -9,7 +9,7 @@
         </ul>
       </nav>
       <div class="footer_logo">
-        <img src="">
+        <img src="~assets/images/logo_footer.svg" alt="星駆花火大会">
       </div>
       <div class="footer_info">
         <div class="footer_info-address">
@@ -31,7 +31,7 @@
 
 <style lang="scss">
 footer {
-  background: url('assets/images/footer_bg.jpg') no-repeat border-box;
+  background: url('assets/images/bg_footer.jpg') no-repeat border-box;
   background-size: 100% auto;
   font-size: 25px;
   color: #fff;
@@ -45,6 +45,9 @@ footer {
         padding: 45px 200px 50px 0;
       }
     }
+  }
+  .footer_logo {
+    margin: 43px 100px;
   }
   .footer_info {
     display: flex;

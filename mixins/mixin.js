@@ -1,7 +1,7 @@
 export default {
   data() {
     return {
-      showButton: false,
+      button: false,
       scroll: 0
     }
   },
@@ -19,9 +19,9 @@ export default {
       const top = 100
       this.scroll = window.scrollY
       if (top <= this.scroll) {
-        this.showButton = true
+        this.button = true
       } else {
-        this.showButton = false
+        this.button = false
       }
     }
   }

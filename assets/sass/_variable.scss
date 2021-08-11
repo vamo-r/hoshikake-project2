@@ -1,0 +1,19 @@
+// メディアクエリ
+$pc: 'only screen and (min-width:769px) ';
+$sp: 'only screen and (max-width:769px) ';
+
+// @include flex(center, center);
+@mixin flex($justify-content: unset, $align-items: unset) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// @include absolute(int, int, int, int);
+@mixin absolute($top: unset, $left: unset, $bottom: unset, $right: unset) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}

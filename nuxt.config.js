@@ -52,6 +52,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -59,6 +60,10 @@ export default {
     manifest: {
       lang: 'ja'
     }
+  },
+
+  styleResources: {
+    scss: ['~/assets/sass/_variable.scss'],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

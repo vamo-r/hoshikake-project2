@@ -1,5 +1,14 @@
 <template>
   <div class="wrapper">
-    test
+    <Header/>
+    <Footer/>
   </div>
 </template>
+
+<script>
+import Mixin from '../mixins/mixin.js'
+
+export default {
+  mixins: [Mixin]
+}
+</script>
