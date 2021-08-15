@@ -1,14 +1,18 @@
 <template>
   <div class="wrapper">
     <Header/>
+    <Map/>
     <Footer/>
+    <ScrollTopButton/>
   </div>
 </template>
 
 <script>
-import Mixin from '../mixins/mixin.js'
-
 export default {
-  mixins: [Mixin]
+  head() {
+    return {
+      title: '楽しみ方'
+    }
+  }
 }
 </script>

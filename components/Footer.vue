@@ -9,7 +9,7 @@
         </ul>
       </nav>
       <div class="footer_logo">
-        <img src="~assets/images/logo_footer.svg" alt="星駆花火大会">
+        <img src="~assets/images/logo.svg" alt="星駆花火大会">
       </div>
       <div class="footer_info">
         <div class="footer_info-address">

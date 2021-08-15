@@ -8,7 +8,7 @@
     <main>
       <div class="main_wrapper">
         <section class="fv">
-          <video class="fv_video" src="~assets/movies/fv.mp4" type="video/mp4" autoplay muted loop playsinline/>
+          <video class="fv_video" type="video/mp4" src="~assets/movies/fv.mp4" autoplay muted loop playsinline/>
           <div class="fv_title">
             <h1>
               <img src="~assets/images/logo_header.svg" alt="星駆花火大会">
@@ -44,8 +44,8 @@
             </p>
           </div>
         </section>
-        <section class="">
-
+        <section class="content">
+          <Content :contents="contents"/>
         </section>
         <section class="beginer">
           <div class="container">
@@ -57,17 +57,44 @@
       </div>
     </main>
     <Footer/>
-    <transition name="fade">
-      <button v-show="button" @click="returnTop">TOP</button>
-    </transition>
+    <ScrollTopButton/>
   </div>
 </template>
 
 <script>
-import Mixin from '../mixins/mixin.js'
-
 export default {
-  mixins: [Mixin]
+  head() {
+    return {
+      title: '星駆花火大会'
+    }
+  },
+  data() {
+    return {
+      contents: [
+        {
+          id: 1,
+          url: '/join',
+          image: require('~/assets/images/join.jpg'),
+          h2: '参',
+          span: '加方法'
+        },
+        {
+          id: 2,
+          url: '/enjoy',
+          image: require('~/assets/images/enjoy.jpg'),
+          h2: '楽',
+          span: 'しみ方'
+        },
+        {
+          id: 3,
+          url: '/visit',
+          image: require('~/assets/images/visit.jpg'),
+          h2: '巡',
+          span: 'る'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -90,11 +117,12 @@ export default {
     }
   }
   main {
+    position: relative;
     background: url('assets/images/bg_main.jpg') border-box;
     background-size: contain;
     .main_wrapper {
       background: rgba($color: #fff, $alpha: .8);
-      .fv{
+      .fv {
         position: relative;
         overflow: hidden;
         width: 100vw;
@@ -156,7 +184,7 @@ export default {
           }
         }
       }
-      .convention {
+      section.convention {
         text-align: center;
         color: #010745;
         .container {
@@ -174,15 +202,18 @@ export default {
           }
         }
       }
-      .test {
-      }
-      .beginer {
+      section.beginer {
         position: relative;
         height: 310px;
         margin: 0 0 110px;
         background: url("assets/images/bg_beginer.jpg") no-repeat border-box;
         background-size: cover;
         background-position: center;
+        transition: all .2s;
+        &:hover {
+          transform: translateY(-5px);
+          transition: all .2s
+        }
         .container {
           h2 {
             @include absolute(0, 0, 0, 0);
@@ -199,21 +230,6 @@ export default {
           }
         }
       }
-    }
-  }
-  button {
-    position: fixed;
-    right: 15px;
-    bottom: 60px;
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #707070;
-    color: #010745;
-    &.fade-enter, .fade-leave-to {
-      opacity: 0
-    }
-    &.fade-enter-active, .fade-leave-active {
-      transition: opacity .5s
     }
   }
 }

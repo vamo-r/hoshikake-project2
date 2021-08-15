@@ -2,13 +2,16 @@
   <div class="wrapper">
     <Header/>
     <Footer/>
+    <ScrollTopButton/>
   </div>
 </template>
 
 <script>
-import Mixin from '../mixins/mixin.js'
-
 export default {
-  mixins: [Mixin]
+  head() {
+    return {
+      title: '初めての方へ'
+    }
+  }
 }
 </script>

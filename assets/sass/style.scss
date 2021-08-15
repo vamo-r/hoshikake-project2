@@ -489,9 +489,17 @@ template {
 }
 
 * {
-  font-family: "游教科書体","YuKyokasho";
+  font-family: "游教科書体","YuKyokasho",sans-serif;
 }
 
 .container {
   margin: 0 70px;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.1s
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0
 }
