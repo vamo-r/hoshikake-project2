@@ -116,6 +116,9 @@ section.content {
           }
         }
       }
+      &:nth-of-type(3) {
+        margin: 0 0 100px;
+      }
     }
   }
 }
