@@ -4,9 +4,12 @@
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 iframe {
   width: 100%;
   height: 830px;
+  @include mq(md) {
+    height: 450px;
+  }
 }
 </style>

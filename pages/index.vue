@@ -2,7 +2,7 @@
   <div class="wrapper">
     <header class="header">
       <nav class="header_nav">
-        <NuxtLink to="/first"><img src="~assets/images/icon_beginer-mark.svg">初めて</NuxtLink>
+        <NuxtLink to="/first"><img src="~assets/images/icon_beginer-mark.svg">初めての方</NuxtLink>
       </nav>
     </header>
     <main>
@@ -11,7 +11,7 @@
           <video class="fv_video" type="video/mp4" src="~assets/movies/fv.mp4" autoplay muted loop playsinline/>
           <div class="fv_title">
             <h1>
-              <img src="~assets/images/logo_header.svg" alt="星駆花火大会">
+              <img src="~assets/images/fv_logo.svg" alt="星駆花火大会">
             </h1>
           </div>
         </section>
@@ -19,14 +19,8 @@
           <div class="container">
             <nav>
               <ul>
-                <li>
-                  <NuxtLink to="/join"><img src="~assets/images/icon_join.svg">参加方法</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/enjoy"><img src="~assets/images/icon_enjoy.svg">楽しみ方</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/visit"><img src="~assets/images/icon_visit.svg">巡る</NuxtLink>
+                <li v-for="nav in contents" :key="nav.id">
+                  <NuxtLink :to="nav.url"><img :src="nav.icon">{{ nav.bigChar }}{{ nav.smallChar }}</NuxtLink>
                 </li>
               </ul>
             </nav>
@@ -74,23 +68,29 @@ export default {
         {
           id: 1,
           url: '/join',
+          icon: require('~/assets/images/icon_join.svg'),
           image: require('~/assets/images/join.jpg'),
-          h2: '参',
-          span: '加方法'
+          bigChar: '参',
+          smallChar: '加方法',
+          sentence: 'ここにテキストここにテキストここにテキスト'
         },
         {
           id: 2,
           url: '/enjoy',
+          icon: require('~/assets/images/icon_enjoy.svg'),
           image: require('~/assets/images/enjoy.jpg'),
-          h2: '楽',
-          span: 'しみ方'
+          bigChar: '楽',
+          smallChar: 'しみ方',
+          sentence: 'ここにテキストここにテキストここにテキスト'
         },
         {
           id: 3,
           url: '/visit',
+          icon: require('~/assets/images/icon_visit.svg'),
           image: require('~/assets/images/visit.jpg'),
-          h2: '巡',
-          span: 'る'
+          bigChar: '巡',
+          smallChar: 'る',
+          sentence: 'ここにテキストここにテキストここにテキスト'
         }
       ]
     }
@@ -98,7 +98,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped> // PC first
 .wrapper {
   position: relative;
   .header {
@@ -107,10 +107,15 @@ export default {
       z-index: 1;
       a {
         @include flex(flex-end, center);
-        padding: 35px 45px 0 0;
-        font-size: 37px;
         color: #fff;
+        margin: 35px 45px 0 0;
+        font-size: 3rem;
+        @include mq() { // SP用関数
+          margin: 10px 10px 0 0;
+          font-size: 1.8rem;
+        }
         img {
+          width: 20%;
           padding: 0 20px 0 0;
         }
       }
@@ -121,30 +126,44 @@ export default {
     background: url('assets/images/bg_main.jpg') border-box;
     background-size: contain;
     .main_wrapper {
-      background: rgba($color: #fff, $alpha: .8);
+      background: rgba($color: #fff, $alpha: .9);
       .fv {
-        position: relative;
         overflow: hidden;
+        position: relative;
         width: 100vw;
         height: 100vh;
+        @include mq(md) { // TAB/SP用関数
+          height: 70vh;
+        }
         .fv_video {
           @include absolute(0, 0, null, null);
           width: 100vw;
           height: 100vh;
           object-fit: fill;
+          @include mq(md) { // TAB/SP用関数
+            height: 70vh;
+          }
         }
         .fv_title {
           @include absolute(50%, 50%, null, null);
           transform: translate(-50%, -50%);
           padding: 22px 36px;
           border: 1px solid #fff;
+          @include mq() { // SP用関数
+            @include absolute(35%, unset, null, null);
+            padding: 10px;
+            transform: unset;
+          }
           h1 {
             width: 100%;
             background: #fff;
             text-align: center;
-            font-size: 63px;
+            font-size: 6.3rem;
             font-weight: bold;
-            color: #010745;
+            letter-spacing: 1rem;
+            @include mq() { // SP用関数
+              font-size: 2rem;
+            }
             img {
               width: 100%;
               height: auto;
@@ -156,10 +175,16 @@ export default {
         .container {
           nav {
             position: relative;
+            @include mq(md) { // TAB/SP用関数
+              margin: 20px auto
+            }
             ul {
               @include absolute(-150px, null, null, null);
-              @include flex(center, center);
+              @include flex(space-around, center);
               width: 100%;
+              @include mq(md) { // TAB/SP用関数
+                position: static;
+              }
               li {
                 width: 28%;
                 a {
@@ -168,17 +193,29 @@ export default {
                   padding: 45px 0;
                   background: #fff;
                   border: 1px solid #707070;
-                  font-size: 33px;
+                  font-size: 3.3rem;
                   font-weight: bold;
-                  color: #010745;
                   letter-spacing: 5px;
+                  transition: all .2s;
+                  @include mq(md) { // SP用関数
+                    display: block;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.6rem;
+                  }
+                  &:hover {
+                    transform: translateY(-10px);
+                    transition: all .2s;
+                  }
                   img {
                     padding: 0 30px 0;
+                    @include mq(md) { // TAB/SP用関数
+                      display: block;
+                      margin: auto;
+                      padding: 0;
+                    }
                   }
                 }
-              }
-              li + li {
-                margin: 0 0 0 100px;
               }
             }
           }
@@ -186,19 +223,28 @@ export default {
       }
       section.convention {
         text-align: center;
-        color: #010745;
         .container {
           h2 {
             display: inline-block;
             margin: 100px 0 0;
             padding: 27.5px 0;
             border-bottom: 1px solid #010745;
-            font-size: 59px;
+            font-size: 5.9rem;
+            @include mq(md) { // TAB/SP用関数
+              margin: 10px auto;
+              padding: 15px 0;
+              font-size: 4rem;
+            }
           }
           p {
             padding: 55.5px 0;
-            font-size: 35px;
+            font-size: 3.5rem;
             line-height: 60px;
+            @include mq(md) { // TAB/SP用関数
+              padding: 20px;
+              font-size: 1.6rem;
+              line-height: 30px;
+            }
           }
         }
       }
@@ -216,15 +262,21 @@ export default {
         }
         .container {
           h2 {
-            @include absolute(0, 0, 0, 0);
-            @include flex(center, center);
-            margin: auto;
-            font-size: 56px;
+            @include absolute(50%, 50%, null, null);
+            transform: translate(-50%, -50%);
             color: #fff;
             a {
               @include flex(null, center);
+              font-size: 5.6rem;
+              @include mq(md) { // TAB/SP用関数
+                font-size: 2.4rem;
+              }
               img {
                 margin: 0 45px 0 0;
+                @include mq(md) { // TAB/SP用関数
+                  width: 15%;
+                  margin: 0 10px 0 0;
+                }
               }
             }
           }

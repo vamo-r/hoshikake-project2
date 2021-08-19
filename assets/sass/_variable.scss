@@ -1,6 +1,14 @@
 // メディアクエリ
-$pc: 'only screen and (min-width:769px) ';
-$sp: 'only screen and (max-width:769px) ';
+$breakpoints: (
+  'sm': 'screen and (max-width: 480px)',
+  'md': 'screen and (max-width: 900px)',
+  'lg': 'screen and (min-width: 769px)',
+) !default;
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
 
 // @include flex(center, center);
 @mixin flex($justify-content: unset, $align-items: unset) {

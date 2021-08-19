@@ -17,6 +17,13 @@ header {
       position: absolute;
       margin: 15px 0 0;
       z-index: 1;
+      h1 {
+        a {
+          img {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

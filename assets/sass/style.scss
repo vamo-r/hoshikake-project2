@@ -488,18 +488,37 @@ template {
   display: none;
 }
 
+/********** destyle.css v2.0.2 end **********/
+
+
+
 * {
+  // 基本書体
   font-family: "游教科書体","YuKyokasho",sans-serif;
 }
 
-.container {
-  margin: 0 70px;
+html {
+  // 基本文字
+  font-size: 62.5%;
+  color: #010745;
 }
 
+/**
+ * ページ遷移アニメーション
+ */
 .page-enter-active, .page-leave-active {
   transition: opacity 0.1s
 }
-
 .page-enter, .page-leave-active {
   opacity: 0
+}
+
+// コンテナー
+.container {
+  margin: 0 70px;
+}
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 0 20px;
+  }
 }

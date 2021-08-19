@@ -3,13 +3,13 @@
     <div class="container">
       <nav class="footer_nav">
         <ul>
-          <li>楽しみ方</li>
-          <li>歴史</li>
-          <li>周辺スポット</li>
+          <li><NuxtLink to="/enjoy">楽しみ方</NuxtLink></li>
+          <li><NuxtLink to="/enjoy">歴史</NuxtLink></li>
+          <li><NuxtLink to="/enjoy">周辺スポット</NuxtLink></li>
         </ul>
       </nav>
       <div class="footer_logo">
-        <img src="~assets/images/logo.svg" alt="星駆花火大会">
+        <NuxtLink to="/"><img src="~assets/images/logo.svg" alt="星駆花火大会"></NuxtLink>
       </div>
       <div class="footer_info">
         <div class="footer_info-address">
@@ -33,32 +33,63 @@
 footer {
   background: url('assets/images/bg_footer.jpg') no-repeat border-box;
   background-size: 100% auto;
-  font-size: 25px;
+  font-size: 2.5rem;
   color: #fff;
+  @include mq(md) { // TAB/SP用関数
+    background-size: cover;
+    font-size: 1.6rem;
+  }
   .footer_nav {
-    margin: 0 5%;
     border-bottom: 1px solid #fff;
     ul {
       display: flex;
       margin: 0 0 100px;
+      @include mq(md) { // TAB/SP用関数
+        padding: 45px 0;
+        margin: 0;
+      }
       li {
-        padding: 45px 200px 50px 0;
+        margin: 45px 0 50px 30px;
+        @include mq(md) { // TAB/SP用関数
+          margin: auto;
+        }
+      }
+      li + li {
+        margin: 45px 0 50px 30%;
+        @include mq(md) { // TAB/SP用関数
+          margin: auto;
+        }
       }
     }
   }
   .footer_logo {
-    margin: 43px 100px;
+    margin: 45px 30px;
   }
   .footer_info {
     display: flex;
+    @include mq(md) { // TAB/SP用関数
+      display: block;
+    }
     .footer_info-address {
-      margin: 0 60px 0 100px;
+      margin: 0 60px 0 30px;
+      @include mq(md) { // TAB/SP用関数
+        margin: 0 0 30px 30px;
+      }
+    }
+    .footer_info-tel {
+      @include mq(md) { // TAB/SP用関数
+        margin: 0 0 0 30px;
+      }
     }
   }
   .copyright {
     margin: 0 30px;
     padding: 0 0 20px;
     text-align: right;
+    @include mq(md) { // TAB/SP用関数
+      margin: 0;
+      padding: 30px 0;
+    }
   }
 }
 </style>

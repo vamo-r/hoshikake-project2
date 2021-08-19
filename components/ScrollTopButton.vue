@@ -23,7 +23,7 @@ export default {
       })
     },
     scrollWindow() {
-      const top = 500
+      const top = 400
       this.scroll = window.scrollY
       if (top <= this.scroll) {
         this.button = true
