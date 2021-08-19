@@ -4,8 +4,8 @@
       <nav class="footer_nav">
         <ul>
           <li><NuxtLink to="/enjoy">楽しみ方</NuxtLink></li>
-          <li><NuxtLink to="/enjoy">歴史</NuxtLink></li>
-          <li><NuxtLink to="/enjoy">周辺スポット</NuxtLink></li>
+          <li><button @click="alert()">歴史</button></li>
+          <li><button @click="alert()">周辺スポット</button></li>
         </ul>
       </nav>
       <div class="footer_logo">
@@ -28,6 +28,17 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  methods: {
+    alert() {
+      alert('このページは作成していません。')
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 footer {
