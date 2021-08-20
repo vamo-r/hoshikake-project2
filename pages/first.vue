@@ -75,7 +75,7 @@ main {
     position: relative;
     width: 100vw;
     height: 70vh;
-    background: url('~/assets/images/bg_first.png') no-repeat border-box;
+    background: url('~/assets/images/first.png') no-repeat border-box;
     background-position: center top;
     .fv_title {
       @include absolute(50%, 50%, null, null);

@@ -47,7 +47,6 @@ ul {
         }
         img {
           width: 100%;
-          object-fit: fill;
           border: 4px solid #010745;
         }
       }
@@ -58,19 +57,21 @@ ul {
           width: 100%;
         }
         h4 {
-          padding: 53px 0;
+          padding: 2.5vw 0;
           border-bottom: 4px solid #010745;
-          font-size: 5.2rem;
+          font-size: 3.2vw;
           @include mq(md) { // TAB/SP用関数
             font-size: 2.8rem;
           }
         }
         p {
-          font-size: 2.7rem;
-          line-height: 40px;
+          margin: 1.8vw;
+          font-size: 1.8vw;
+          line-height: 2.5vw;
           @include mq(md) { // TAB/SP用関数
             font-size: 1.6rem;
             text-align: left;
+            line-height: initial;
           }
         }
       }
