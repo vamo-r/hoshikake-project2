@@ -46,6 +46,7 @@ export default {
   border: 1px solid #707070;
   text-align: center;
   color: #010745;
+  z-index: 99;
   &::after {
     content: "▲";
     text-align: center;
