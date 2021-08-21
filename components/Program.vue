@@ -61,7 +61,7 @@ ul {
           border-bottom: 4px solid #010745;
           font-size: 3.2vw;
           @include mq(md) { // TAB/SP用関数
-            font-size: 2.8rem;
+            font-size: 2.5rem;
           }
         }
         p {

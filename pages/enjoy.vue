@@ -148,7 +148,7 @@ export default {
       line-height: 60px;
       @include mq(md) { // TAB/SP用関数
         font-size: 1.8rem;
-        letter-spacing: 10px;
+        letter-spacing: 6px;
         line-height: 30px;
       }
       span {

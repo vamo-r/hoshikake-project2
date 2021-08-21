@@ -29,7 +29,8 @@ export default {
       { hid: 'og:image', property: 'og:image', content: '/icon.png' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'favicons/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: 'favicons/apple-touch-icon.png' }
     ]
   },
 
@@ -59,6 +60,9 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
+      name: '星駆花火大会 | 第2回 星駆web制作企画',
+      short_name: '星駆花火大会',
+      discription: '技術向上及び交流を目的としたサイトです。',
       lang: 'ja'
     }
   },
