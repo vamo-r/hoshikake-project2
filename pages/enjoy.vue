@@ -34,11 +34,11 @@
             </p>
           </div>
           <div class="fireworks_link">
-            <NuxtLink to="/join">参加方法はこちら</NuxtLink>
+            <NuxtLink :to="{ path: '/join' }">参加方法はこちら</NuxtLink>
           </div>
         </div>
       </section>
-      <section class="program">
+      <section id="program">
         <div class="program_wrapper">
           <div class="container">
             <h3>特別プログラム</h3>
@@ -72,7 +72,7 @@ export default {
           id: 2,
           image: require('~/assets/images/enjoy_eyecatch2.png'),
           title: 'クルージングパーティー',
-          sentence: '花火以外のパフォーマンスで一日中楽しめます。様々なコンテンツで一日中楽しめるのが星駆競技大会です。日中に見れる星駆地域の郷⼟芸能団体のパフォーマンスは、お祭りムードを盛り上げます。その他にもお子様向けのコンテンツなど準備中です。詳細はHPやSNSで随時公開していきます。',
+          sentence: '船の上では、島の地産食材を用いたビュッフェ形式のディナーとお酒を振る舞うクルージングパーティを行います。頭上に打ち上がる大迫力の花火を五感で感じながら、島の味をしっかりとお楽しみください。',
         },
         {
           id: 3,
@@ -81,6 +81,12 @@ export default {
           sentence: '花火以外のパフォーマンスで一日中楽しめます。様々なコンテンツで一日中楽しめるのが星駆競技大会です。日中に見れる星駆地域の郷⼟芸能団体のパフォーマンスは、お祭りムードを盛り上げます。その他にもお子様向けのコンテンツなど準備中です。詳細はHPやSNSで随時公開していきます。',
         }
       ]
+    }
+  },
+  mounted() {
+    const hash = this.$route.hash;
+    if (hash && hash.match(/^#.+$/)) {
+      this.$scrollTo(hash);
     }
   }
 }
@@ -148,7 +154,7 @@ export default {
       line-height: 60px;
       @include mq(md) { // TAB/SP用関数
         font-size: 1.8rem;
-        letter-spacing: 6px;
+        letter-spacing: 5px;
         line-height: 30px;
       }
       span {
@@ -216,7 +222,7 @@ export default {
     }
   }
 }
-.program {
+#program {
   background: url('~assets/images/bg_main.jpg') border-box;
   background-size: contain;
   .program_wrapper {

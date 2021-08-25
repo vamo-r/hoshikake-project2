@@ -10,14 +10,11 @@
         </div>
         <div class="fv_text">
           <p>
-            大会についての説明大会についての説明大会についての説明<br>
-            大会についての説明大会についての説明大会についての説明<br>
-            大会についての説明大会についての説明大会についての説明<br>
-            大会についての説明大会についての説明大会についての説明
+            星駆花火大会は、20年続く船に乗って花火大会を満喫する日本で唯一のクルージング花火大会です。クルーズ船を始めとした最大50隻以上の船が出航し、海の上から大迫力の花火を目と耳だけではなく、お食事と一緒に五感全てでご体感頂けます。チケットの購入はこちらから頂けます。また、クルージングではなくても、島や港からの観覧も頂けます。
           </p>
         </div>
       </section>
-      <section class="ticket">
+      <section id="ticket">
         <div class="container">
           <div class="ticket_info">
             <div class="info_item1">
@@ -54,7 +51,7 @@
           </button>
         </div>
       </section>
-      <section class="timetable">
+      <section id="timetable">
         <div class="timetable_wrapper">
           <div class="container">
             <h3>クルージング船　運行ダイヤ</h3>
@@ -432,15 +429,11 @@
           </div>
         </div>
       </section>
-      <section class="access">
+      <section id="access">
         <div class="container">
           <h3>アクセス</h3>
           <p>
-            北木島へは伏越港発着の大福丸フェリーか金風呂丸フェリー、又は笠岡の住吉港から<br>
-            三洋汽船が運航する旅客船を利用します。フェリーは島の西側の豊浦港と金風呂港、<br>
-            旅客船は島の東側の北木島港（大浦港）と、楠港に停まります。<br>
-            旅客船は「笠岡～佐柳本浦」航路に乗船ください。③の高速船と④の普通船があります。<br>
-            尚、各島へは海上タクシーの利用も可能。人数やプランによって検討してみるのもよいでしょう。
+            北木島へは伏越港発着の大福丸フェリーか金風呂丸フェリー、又は笠岡の住吉港から三洋汽船が運航する旅客船を利用します。フェリーは島の西側の豊浦港と金風呂港、旅客船は島の東側の北木島港（大浦港）と、楠港に停まります。旅客船は「笠岡～佐柳本浦」航路に乗船ください。③の高速船と④の普通船があります。尚、各島へは海上タクシーの利用も可能。人数やプランによって検討してみるのもよいでしょう。
           </p>
         </div>
       </section>
@@ -462,7 +455,13 @@ export default {
     alert() {
       alert('模擬サイトの為、販売されません。');
     }
-  }
+  },
+  mounted() {
+    const hash = this.$route.hash;
+    if (hash && hash.match(/^#.+$/)) {
+      this.$scrollTo(hash);
+    }
+  },
 }
 </script>
 
@@ -471,15 +470,14 @@ export default {
   overflow: hidden;
   position: relative;
   width: 100vw;
-  height: 100vh;
   background: url('~/assets/images/join.jpg') no-repeat border-box;
   background-size: cover;
   @include mq(md) { // TAB/SP用関数
     height: 70vh;
   }
   .fv_title {
-    @include absolute(35%, 50%, null, null);
-    transform: translate(-50%, -50%);
+    width: 45%;
+    margin: 20vh auto 0;
     padding: 20px 35px;
     border: 1px solid #fff;
     @include mq() { // SP用関数
@@ -492,7 +490,7 @@ export default {
       font-size: 7rem;
       font-weight: bold;
       @include mq(md) { // TAB用関数
-        font-size: 6rem;
+        font-size: inherit;
       }
       @include mq() { // SP用関数
         font-size: 2rem;
@@ -504,10 +502,8 @@ export default {
     }
   }
   .fv_text {
-    @include absolute(70%, 50%, null, null);
-    transform: translate(-50%, -50%);
-    width: max-content;
-    margin: 20px 0;
+    width: 80%;
+    margin: 20px auto;
     padding: 35px 20px;
     @include mq(md) { // TAB/SP用関数
       width: 90%;
@@ -523,14 +519,14 @@ export default {
     }
   }
 }
-.ticket {
+#ticket {
   position: relative;
   width: 100%;
   padding: 60px 0;
   background: url('~assets/images/bg_ticket.png') no-repeat border-box;
   background-color: rgba(255, 255, 255, .7);
   background-blend-mode: lighten;
-  background-size: 100% auto;
+  background-size: cover;
   @include mq(md) { // TAB/SP用関数
     background-position: center;
   }
@@ -612,7 +608,7 @@ export default {
     }
   }
 }
-.timetable {
+#timetable {
   background: url('~assets/images/bg_main.jpg') border-box;
   background-size: contain;
   .timetable_wrapper {
@@ -686,7 +682,7 @@ export default {
     }
   }
 }
-.access {
+#access {
   padding: 110px 0 150px;
   background: #ebebeb;
   @include mq(md) { // TAB/SP用関数

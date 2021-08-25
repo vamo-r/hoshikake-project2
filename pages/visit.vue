@@ -9,7 +9,7 @@
               <img src="~/assets/images/fv_visit.svg" alt="巡る">
             </h2>
           </div>
-          <div class="fv_content">
+          <div class="fv_content" id="visit">
             <ul>
               <li v-for="tab in tabs" :key="tab.id">
                 <button @click="change(tab.id)"><img :src="tab.image"></button>
@@ -20,18 +20,9 @@
       </section>
       <div class="bg">
         <Visit :isActive="isActive"/>
-        <section class="access">
-          <div class="container">
-            <h3>アクセス</h3>
-            <p>
-              〒606-8414　京都市左京区浄土寺真如町82<br>
-              Tel 075-771-0915 (9:00〜16:00)
-            </p>
-          </div>
-        </section>
       </div>
     </main>
-    <Map/>
+    <Map :isActive="isActive"/>
     <Footer/>
     <ScrollTopButton/>
   </div>
@@ -161,37 +152,6 @@ main {
   }
   .bg {
     background: rgba($color: #fff, $alpha: .9);
-    .access {
-      padding: 110px 0 150px;
-      @include mq(md) { // TAB/SP用関数
-        padding: 80px 0;
-      }
-      .container {
-        text-align: center;
-        h3 {
-          display: inline-block;
-          padding: 0 0 27.5px;
-          border-bottom: 1px solid #010745;
-          font-size: 4.3rem;
-          font-weight: bold;
-          @include mq(md) { // TAB/SP用関数
-            font-size: 4rem;
-          }
-        }
-        p {
-          display: table;
-          margin: 107px auto 0;
-          text-align: initial;
-          font-size: 3rem;
-          line-height: 60px;
-          @include mq(md) { // TAB/SP用関数
-            margin: 40px auto 0;
-            font-size: 1.6rem;
-            line-height: 30px;
-          }
-        }
-      }
-    }
   }
 }
 </style>

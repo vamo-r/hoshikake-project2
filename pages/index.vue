@@ -2,7 +2,7 @@
   <div class="wrapper">
     <header class="header">
       <nav class="header_nav">
-        <NuxtLink to="/first"><img src="~assets/images/icon_beginer-mark.svg">初めての方</NuxtLink>
+        <NuxtLink :to="{ path: '/first' }"><img src="~assets/images/icon_beginer-mark.svg">初めての方</NuxtLink>
       </nav>
     </header>
     <main>
@@ -30,11 +30,7 @@
           <div class="container">
             <h2>大会について</h2>
             <p>
-              大会についての説明大会についての説明大会についての説明<br>
-              大会についての説明大会についての説明大会についての説明<br>
-              大会についての説明大会についての説明大会についての説明<br>
-              大会についての説明大会についての説明大会についての説明<br>
-              大会についての説明大会についての説明大会についての説明<br>
+              星駆花火大会は、20年続く船に乗って花火大会を満喫する日本で唯一のクルージング花火大会です。クルーズ船を始めとした最大50隻以上の船が出航し、海の上から大迫力の花火を目と耳だけではなく、お食事と一緒に五感全てでご体感頂けます。毎年8万名以上の来場者がお越しいただき、大玉や、ナイアガラの花火など、2万発以上のド迫力の花火を音楽と合わせ、お楽しみいただけます。
             </p>
           </div>
         </section>
@@ -44,7 +40,7 @@
         <section class="beginer">
           <div class="container">
             <h2>
-              <NuxtLink to="/first"><img src="~assets/images/icon_beginer-mark.svg">初めての方へ</NuxtLink>
+              <NuxtLink :to="{ path: '/first' }"><img src="~assets/images/icon_beginer-mark.svg">初めての方へ</NuxtLink>
             </h2>
           </div>
         </section>
@@ -72,7 +68,7 @@ export default {
           image: require('~/assets/images/join.jpg'),
           bigChar: '参',
           smallChar: '加方法',
-          sentence: 'ここにテキストここにテキストここにテキスト'
+          sentence: '船からの観覧ができる、日本で唯一のクルージング花火大会。チケットはこちらから。'
         },
         {
           id: 2,
@@ -81,7 +77,7 @@ export default {
           image: require('~/assets/images/enjoy.jpg'),
           bigChar: '楽',
           smallChar: 'しみ方',
-          sentence: 'ここにテキストここにテキストここにテキスト'
+          sentence: '大規模な花火エンターテイメントショーや、競技部門も追加され過去最大級の規模で開催する大会です '
         },
         {
           id: 3,
@@ -90,7 +86,7 @@ export default {
           image: require('~/assets/images/visit.jpg'),
           bigChar: '巡',
           smallChar: 'る',
-          sentence: 'ここにテキストここにテキストここにテキスト'
+          sentence: '島に沢山存在する、様々な観光施設や、宿泊施設を御覧ください。'
         }
       ]
     }

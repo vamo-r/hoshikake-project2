@@ -3,7 +3,7 @@
   <li v-for="item in items" :key="item.id">
     <div class="program_items">
       <div class="program_eyecatch">
-        <img :src="item.image">
+        <img :src="item.image" alt="アイキャッチ画像">
       </div>
       <div class="program_text">
         <h4>{{ item.title }}</h4>
